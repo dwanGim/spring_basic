@@ -14,11 +14,24 @@
 	<bean id ="hiphophiphop2" class="com.ict.di.classfile.HiphopSinger"></bean>
 	<bean id ="hiphophiphop3" class="com.ict.di.classfile.HiphopSinger"></bean>
 	<bean id ="hiphopStage" class="com.ict.di.classfile.Stage">
-		<constructor-arg ref="hiphophiphop"></constructor-arg>
+		<!-- <constructor-arg ref="hiphophiphop"></constructor-arg> -->
+		<!--  setter주입 시는 property 태그를 쓰고
+		name에는 대입받을 멤버변수명, ref에는 집어넣을 bean의 명칭을 적습니다. -->
+		<property name="singer" ref="hiphophiphop"></property>
 	</bean>
 	
-	<bean id="dancedance" class="com.ict.di.classfile.DanceSinger"></bean>
 	<bean id ="danceStage" class="com.ict.di.classfile.Stage">
-		<constructor-arg ref="dancedance"></constructor-arg>
+		<constructor-arg ref="stage"></constructor-arg>
 	</bean>
+	
+	<bean id ="hiphopbroad" class="com.ict.di.classfile.Broadcast">
+		<constructor-arg ref="hiphopStage"></constructor-arg>
+	</bean>
+	<bean id ="dancebroad" class="com.ict.di.classfile.Broadcast">
+		<constructor-arg ref="danceStage"></constructor-arg>
+	</bean>
+	<bean id="danceSatellite" class="com.ict.di.classfile.Satellite">
+		<constructor-arg ref="danceSatell"></constructor-arg>
+	</bean>
+	
 </beans>

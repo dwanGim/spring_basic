@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="danceSinger" class="com.ict.di.classfile.DanceSinger">
+		<constructor-arg ref="danceSinger"></constructor-arg>
+	</bean>
+		
+	<bean id ="danceStage" class="com.ict.di.classfile.Stage">
+		<constructor-arg ref="danceSinger"></constructor-arg>
+	</bean>
+
+	<bean id ="danceBroad" class="com.ict.di.classfile.Broadcast">
+		<constructor-arg ref="danceStage"></constructor-arg>
+	</bean>
+
+
+</beans>

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Satellite {
 	
-	@Autowired
+	
 	private Broadcast broad;
 	
 	public Satellite(Broadcast broad) {
