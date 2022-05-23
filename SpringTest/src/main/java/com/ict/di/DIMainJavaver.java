@@ -16,7 +16,7 @@ public class DIMainJavaver {
 		// Stage도 만들어서 공연을 시켜보세요.
 		//
 		//DanceSinger singer = new DanceSinger();
-		HiphopSinger singer = new HiphopSinger();
+		Singer singer = new Singer();
 		Stage stage = new Stage(singer);
 		stage.perform();
 		singer.sing();

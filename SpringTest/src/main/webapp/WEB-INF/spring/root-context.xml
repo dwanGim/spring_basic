@@ -8,30 +8,6 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<context:component-scan base-package="com.ict.di.classfile" />	
 	
-	<!--  태그로 bean(자바객체) 빈 컨테이너에 추가 
-	id : 빈 컨테이너 내부에서 쓸 명칭, class : 구현하고 싶은 클래스의 이름을 패키지명부터 -->
-	<bean id ="hiphophiphop" class="com.ict.di.classfile.HiphopSinger"></bean>
-	<bean id ="hiphophiphop2" class="com.ict.di.classfile.HiphopSinger"></bean>
-	<bean id ="hiphophiphop3" class="com.ict.di.classfile.HiphopSinger"></bean>
-	<bean id ="hiphopStage" class="com.ict.di.classfile.Stage">
-		<!-- <constructor-arg ref="hiphophiphop"></constructor-arg> -->
-		<!--  setter주입 시는 property 태그를 쓰고
-		name에는 대입받을 멤버변수명, ref에는 집어넣을 bean의 명칭을 적습니다. -->
-		<property name="singer" ref="hiphophiphop"></property>
-	</bean>
-	
-	<bean id ="danceStage" class="com.ict.di.classfile.Stage">
-		<constructor-arg ref="stage"></constructor-arg>
-	</bean>
-	
-	<bean id ="hiphopbroad" class="com.ict.di.classfile.Broadcast">
-		<constructor-arg ref="hiphopStage"></constructor-arg>
-	</bean>
-	<bean id ="dancebroad" class="com.ict.di.classfile.Broadcast">
-		<constructor-arg ref="danceStage"></constructor-arg>
-	</bean>
-	<bean id="danceSatellite" class="com.ict.di.classfile.Satellite">
-		<constructor-arg ref="danceSatell"></constructor-arg>
-	</bean>
+
 	
 </beans>

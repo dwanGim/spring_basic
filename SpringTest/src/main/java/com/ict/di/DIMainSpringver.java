@@ -22,8 +22,8 @@ public class DIMainSpringver {
 		// Stage stage = context.getBean("stage", Stage.class);
 		// stage.perform();
 		
-		Broadcast broadcast = context.getBean("broadcast", Broadcast.class); 
-		broadcast.broad();
+		//Broadcast broadcast = context.getBean("broadcast", Broadcast.class); 
+		//broadcast.broad();
 		
 		//Satellite satellite = context.getBean("Satellite", Satellite.class);
 		//satellite.SatelliteBroad();
