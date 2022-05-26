@@ -1,11 +1,17 @@
 package com.ict.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ict.domain.TestVO;
 
 // @Controller 어노테이션으로 컨테이너에 적재.
 @Controller
@@ -96,5 +102,43 @@ public class MVCController {
 		// path.jsp에는 {page}페이지 조회 중입니다 라는 문장이 뜨게 해보겠습니다.
 		modle.addAttribute("page", page);
 		return"path";
+	}
+	
+	// PathVariable을 활용해 환전 조회 프로그램을 만들어보겠습니다.
+	@RequestMapping(value="/exchange/{won}")
+	public String exchange(@PathVariable int won, Model model) {
+		
+		double euro = won / 1349.49;
+		
+		model.addAttribute("won", won);
+		model.addAttribute("euro", euro);
+		return"exchange";
+	}
+	
+	@RequestMapping("/spring")
+	public void spring() {
+		System.out.println("/spring주소 감지");
+	}
+	
+	// 동일한 이름의 파라미터가 여럿 전달되는 경우는 ArrayList<>, String[]등을 이용해
+	// 처리할 수 있습니다.
+	@GetMapping("/list")
+	public String getList(@RequestParam("ids") ArrayList<String> ids, Model model) {
+		System.out.println(ids);
+		model.addAttribute("ids", ids);
+		return"list";
+	}
+	
+	@GetMapping("/getVO")
+	public String voForm() {
+		
+		return"voform";
+	}
+	
+	@PostMapping("/getVO")
+	public String getVO(TestVO vo, Model model) {
+		System.out.println("받아온 객체 : " + vo);
+		model.addAttribute("vo", vo);
+		return"voview";
 	}
 }
