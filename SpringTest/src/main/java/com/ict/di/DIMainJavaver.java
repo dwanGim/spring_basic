@@ -17,7 +17,7 @@ public class DIMainJavaver {
 		//
 		//DanceSinger singer = new DanceSinger();
 		Singer singer = new Singer();
-		Stage stage = new Stage(singer);
+		Stage stage = new Stage();
 		stage.perform();
 		singer.sing();
 		// Broadcast를 생성해서 방송무대를 송출해보겠습니다.
