@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>spring.jsp 접속 완료</h1>
 
 </body>
 </html>

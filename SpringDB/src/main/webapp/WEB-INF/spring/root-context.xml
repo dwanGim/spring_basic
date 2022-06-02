@@ -13,7 +13,7 @@
 			value="jdbc:log4jdbc:oracle:thin:@localhost:1521/XEPDB1" />
 		<property name="username" value="mytest" />
 		<property name="password" value="mytest" />
-	</bean>	
+	</bean>	 
 	
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" 
 	destroy-method="close">

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ict.mapper.BoardMapper">
+
+	<select id="getList" resultType="com.ict.persistence.BoardVO">
+		<!-- 태그로 오인될 수 있는 문자를 포함하는 쿼리문은 그냥 작성하지 않고
+		CDATA를 이용합니다. 아래와 같이 <![CDATA[ 실행문 ]]>을 CDATA 내부에
+		작성하면 내부의 부등호는 전부 문자로 간주됩니다.
+		***CDATA가 없으면 부등호가 태그를 여는 용도로 인식될 수가 있습니다.***
+		 -->
+		 <![CDATA[
+		 	SELECT * FROM board_tbl WHERE bno < 4
+		 ]]>
+		 
+	</select>
+
+</mapper>

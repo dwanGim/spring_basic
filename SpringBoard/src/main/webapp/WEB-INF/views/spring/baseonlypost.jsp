@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>base.jsp 접속 완료</h1>
+	<h1>base only post</h1>
+
 </body>
 </html>
