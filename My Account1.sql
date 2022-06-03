@@ -9,10 +9,16 @@ CREATE TABLE board_tbl (
     updatedate date default sysdate
 );
 
-alter table board_tbl add constraint pk_board primary key(bno);
+ALTER TABLE board_tbl ADD CONSTRAINT pk_board PRIMARY KEY(bno);
 INSERT INTO board_tbl (bno, title, content, writer) values (board_num.nextval, 'first test title', 'first content', 'fisrt writer');
 INSERT INTO board_tbl (bno, title, content, writer) values (board_num.nextval, 'second test title', 'second content', 'second writer');
 INSERT INTO board_tbl (bno, title, content, writer) values (board_num.nextval, 'third test title', 'third content', 'third writer');
 SELECT * FROM board_tbl;
 
+UPDATE board_tbl SET title = '1title', content = 'content', writer = '1writer', updateDate = sysdate WHERE bno = 3;
+
+UPDATE board_tbl SET (title, content, writer, updateDate) = (, 'wqrq', 'eqweqw', sysdate ) WHERE bno = 3;
 commit;
+
+
+ALTER SEQUENCE board_num NOCACHE;

@@ -10,9 +10,24 @@
 		***CDATA가 없으면 부등호가 태그를 여는 용도로 인식될 수가 있습니다.***
 		 -->
 		 <![CDATA[
-		 	SELECT * FROM board_tbl WHERE bno < 4
+		 	SELECT * FROM board_tbl ORDER BY bno DESC
 		 ]]>
 		 
 	</select>
 
+	<insert id="insert">
+		INSERT INTO board_tbl (bno, title, content, writer)
+			VALUES
+		(board_num.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM board_tbl WHERE bno = #{bno}
+	</delete>
+	
+	<update id="update">
+		UPDATE board_tbl SET title = #{title}, content = #{content},
+			writer = #{writer}, updatedate = SYSDATE
+			WHERE bno = #{bno}
+	</update>
 </mapper>
