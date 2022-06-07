@@ -52,7 +52,7 @@ public class BoardMapperTests {
 		mapper.delete(bno);
 	}
 	
-	@Test
+	//@Test
 	public void updateTest() {
 		
 		BoardVO vo = new BoardVO();
@@ -63,6 +63,14 @@ public class BoardMapperTests {
 		vo.setWriter("update writer");
 		
 		mapper.update(vo);
+	}
+	
+	@Test
+	public void getBoardDetail() {
+		
+		mapper.getBoardDetail(1);
+		
+		
 	}
 	
 	

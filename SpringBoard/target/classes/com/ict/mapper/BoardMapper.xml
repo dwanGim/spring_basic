@@ -30,4 +30,8 @@
 			writer = #{writer}, updatedate = SYSDATE
 			WHERE bno = #{bno}
 	</update>
+	
+	<select id="getBoardDetail" resultType="com.ict.persistence.BoardVO">
+		SELECT * FROM board_tbl WHERE bno = #{bno} 
+	</select>
 </mapper>
