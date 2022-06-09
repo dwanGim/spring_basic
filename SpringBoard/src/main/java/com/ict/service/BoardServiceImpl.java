@@ -7,42 +7,38 @@ import org.springframework.stereotype.Service;
 
 import com.ict.mapper.BoardMapper;
 import com.ict.persistence.BoardVO;
+import com.ict.persistence.Criteria;
 
 @Service
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardMapper mapper;
-	
+
 	@Override
-	public List<BoardVO> getList() {
+	public List<BoardVO> getList(Criteria cri) {
 		
-		return mapper.getList();
+		return mapper.getList(cri);
 	}
 
 	@Override
 	public void insert(BoardVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void delete(long bno) {
-		// TODO Auto-generated method stub
-		
+		mapper.insert(vo);
 	}
 
 	@Override
-	public BoardVO getBoardDetail(long bno) {
-		
-		return mapper.getBoardDetail(bno);
+	public void delete(Long bno) {
+		mapper.delete(bno);
 	}
 
 	@Override
 	public void update(BoardVO vo) {
-		// TODO Auto-generated method stub
-		
+		mapper.update(vo);
 	}
 
+	@Override
+	public BoardVO getDetail(Long bno) {
+		return mapper.getDetail(bno);
+	}
+	
 }
