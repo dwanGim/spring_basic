@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ict.persistence.BoardVO;
 import com.ict.persistence.Criteria;
+import com.ict.persistence.PageMaker;
+import com.ict.persistence.SearchCriteria;
 import com.ict.service.BoardService;
 
 import lombok.extern.log4j.Log4j;
@@ -33,12 +35,20 @@ public class BoardController {
 	@RequestMapping("/list")
 			// @RequestParam의 defaultValue를 통해 값이 안 들어올 때 자동으로 배정할 값을 정할 수 있어요.
 			// @RequestParam(defaultValue = "1")
-	public String getBoardList(Model model, Criteria cri) {
+	public String getBoardList(Model model, SearchCriteria cri) {
 		// 글 전체 목록 가져오기
+		
+		if(cri.getPage() == 0) {
+			cri.setPage(1);
+		}
 		
 		List<BoardVO> boardList = service.getList(cri);
 		log.info(boardList);
+		
+		PageMaker pageMaker = new PageMaker();
+		
 		// 바인딩
+		model.addAttribute("cri", cri);
 		model.addAttribute("boardList", boardList);
 		// 리턴 구문을 적어서 원하는 파일로 데이터 보내기.
 		return "/board/list"; 

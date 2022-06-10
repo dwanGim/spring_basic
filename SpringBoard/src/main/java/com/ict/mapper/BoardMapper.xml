@@ -42,5 +42,9 @@
 	<select id="getDetail" resultType="com.ict.persistence.BoardVO">
 		SELECT * FROM board_tbl WHERE bno = #{bno}
 	</select>
+	
+	<select id="getBoardCount" resultType="long">
+		SELECT COUNT(*) FROM board_tbl
+	</select>
 
 </mapper>

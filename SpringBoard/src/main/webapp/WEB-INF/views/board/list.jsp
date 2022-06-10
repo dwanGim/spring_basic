@@ -33,5 +33,56 @@
 		</tbody>
 	</table>
 	<a href="/board/insert"><button class="btn btn-primary">글쓰기</button></a>
+	
+	<ul class="pagination">
+		<c:if test="${pageMaker.prev ne 1}">
+			<li class="page-item">
+				<a class="page-link" href="${pageMaker.startPage - 1}" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>	
+		</c:if>
+	
+	<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="pNum">
+		 <li class="page-item ${pNum eq pageMaker.cri.page ? 'active' : ''} "><a class="page-link"
+            href="/board/list?page=${pNum}">${pNum}</a></li>
+	</c:forEach>
+	<c:if test="${pageMaker.endPage ne pageMaker.totalPages}">
+         <li class="page-item">
+         	<a class="page-link" aria-label="Next"
+       		href="/board/list?pageNum=${pageMaker.endPage + 1}">&raquo;</a>
+         </li>
+    </c:if>
+	</ul>
+	
+	</br>
+	<!-- 검색창 위치 -->
+	<div>
+		<select name="searchType">
+			<option value="n" 
+			<c:out value="${cri.searchType == null ? 'selected' : '' }"/>>
+			-
+			</option>
+			<option value="t"
+			<c:out value="${cri.searchType == 't' ? 'selected' : '' }"/>>
+			</option>
+			<option value="c"
+			<c:out value="${cri.searchType == 't' ? 'selected' : '' }"/>>
+			</option>
+			<option value="W"
+			<c:out value="${cri.searchType == 't' ? 'selected' : '' }"/>>
+			</option>
+			<option value="tc"
+			<c:out value="${cri.searchType == 't' ? 'selected' : '' }"/>>
+			</option>
+			<option value="cw"
+			<c:out value="${cri.searchType == 't' ? 'selected' : '' }"/>>
+			</option>
+			<option value="tcw"
+			<c:out value="${cri.searchType == 't' ? 'selected' : '' }"/>>
+			</option>
+		</select>
+	</div>
+	${pageMaker}
 </body>
 </html>

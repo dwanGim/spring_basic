@@ -71,6 +71,11 @@ public class BoardMapperTests {
 		mapper.getDetail(1L);
 	}
 	
+	@Test
+	public void getBoardCountTest() {
+		mapper.getBoardCount();
+	}
+	
 	
 }
 

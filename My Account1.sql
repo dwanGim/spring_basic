@@ -12,7 +12,7 @@ CREATE TABLE board_tbl (
 
 ALTER TABLE board_tbl ADD CONSTRAINT pk_board PRIMARY KEY(bno);
 
-SELECT * FROM board_tbl;
+SELECT COUNT(*) FROM board_tbl;
 
 
 INSERT INTO board_tbl (bno, title, content, writer) values (board_num.nextval, 'first test title', 'first content', 'fisrt writer');

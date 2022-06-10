@@ -27,4 +27,8 @@ public interface BoardService {
 	// detail 로직도 mapper에 작성된 로직을 그대로 가져옵니다.
 	public BoardVO getDetail(Long bno);
 	
+	public Long getBoardCount();
+	
+	
+	
 }
