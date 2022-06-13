@@ -36,7 +36,7 @@ INSERT INTO board_tbl (bno, title, content, writer)
 
 
 SELECT *
-/*+ INDEX_DESC(board-tbl pk-board) */
+/*+ INDEX_DESC(board_tbl pk_board) */
 FROM board_tbl ORDER BY bno DESC;
 
 
@@ -55,13 +55,12 @@ WHERE rn > 10;
 
 SELECT * FROM 
 (SELECT /*+ INDEX_DESC(board_tbl pk board) */
-rownum rn, board_tbl.* from board_tbl WHERE rownum <= (1 * 10))
-WHERE rn > (1 - 1) * 10;
+rownum rn, board_tbl.* from board_tbl WHERE rownum <= (9 * 10))
+WHERE rn > (9 - 1) * 10;
 
 
 
 commit;
 
 
-
-DROP TABLE board_tbl;
+SELECT * FROM board_tbl WHERE TITLE like '%' || 'seco' || '%';

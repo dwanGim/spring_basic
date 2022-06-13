@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ict.persistence.BoardVO;
 import com.ict.persistence.Criteria;
@@ -20,7 +21,7 @@ import lombok.extern.log4j.Log4j;
 
 // bean container에 넣어보세요.
 @Controller
-// 주소 /board 가 붙도록 처리해주세요.
+// 주소 /board 가붙도록 처리해주세요.
 @RequestMapping("/board")
 @Log4j
 public class BoardController {
@@ -33,23 +34,22 @@ public class BoardController {
 	// list.jsp로 연결되면 되고, getList()메서드로 가져온 전체 글 목록을
 	// 포워딩해서 화면에 뿌려주면, 글번호, 글제목, 글쓴이, 날짜, 수정날짜를 화면에 출력해줍니다.
 	@RequestMapping("/list")
-			// @RequestParam의 defaultValue를 통해 값이 안 들어올 때 자동으로 배정할 값을 정할 수 있어요.
-			// @RequestParam(defaultValue = "1")
-	public String getBoardList(Model model, SearchCriteria cri) {
-		// 글 전체 목록 가져오기
-		
+					//@RequestParam의 defaultValue를 통해 값이 안들어올떄 자동으로 배정할 값을 정할수있음
+	public String getBoardList(SearchCriteria cri, Model model) {
 		if(cri.getPage() == 0) {
 			cri.setPage(1);
 		}
-		
+		// 글 전체 목록 가져오기
 		List<BoardVO> boardList = service.getList(cri);
 		log.info(boardList);
-		
-		PageMaker pageMaker = new PageMaker();
-		
 		// 바인딩
-		model.addAttribute("cri", cri);
 		model.addAttribute("boardList", boardList);
+		// PageMaker 생성 및 cri주입,  그리고 바인딩해서 보내기
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalBoard(service.getBoardCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
 		// 리턴 구문을 적어서 원하는 파일로 데이터 보내기.
 		return "/board/list"; 
 	}
@@ -92,10 +92,16 @@ public class BoardController {
 	
 	// 글삭제도 post방식으로 처리하도록 합니다.
 	@PostMapping("/delete")
-	public String deleteBoard(Long bno) {
+	public String deleteBoard(Long bno, SearchCriteria cri, RedirectAttributes rttr) {
 		// 삭제 후 리스트로 돌아갈 수 있도록 내부 로직을 만들어주시고.
 		service.delete(bno);
 		// 디테일 페이지에 삭제 요청을 넣을 수 있는 폼을 만들어주세요.
+		
+		// 리다이렉트 URL 설정
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+
 		
 		return "redirect:/board/list";
 	}
@@ -112,11 +118,21 @@ public class BoardController {
 	
 	// 글 수정 요청을 받아서 DB에 반영한 다음 detail페이지에서 확인시켜주는 로직
 	@PostMapping("/update")
-	public String updateBoard(BoardVO board) {
+	public String updateBoard(BoardVO board, SearchCriteria cri, RedirectAttributes rttr) {
 		// 받아온 vo를 이용해 update로직을 실행한 다음
 		service.update(board);
+		
+		// rttr.addAttribute("파라미터명", 전달자료)
+		// 는 호출되면 redirct 주소 뒤에 파라미터를 붙여줍니다.
+		// rttr.addFlashAttribute()는 넘어간 페이지에서
+		// 파라미터를 쓸 수 있도록 전달하는 것으로 둘의 역할이 다르니 주의합니다.
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("bno", board.getBno());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+		
 		// 해당 글 번호의 디테일 페이지로 돌아가서 수정 여부를 바로 확인할 수 있게 도와줍ㄴ디ㅏ.
-		return "redirect:/board/detail?bno=" + board.getBno();
+		return "redirect:/board/detail";
 	}
 	
 }

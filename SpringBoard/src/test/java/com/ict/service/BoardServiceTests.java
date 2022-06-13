@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ict.persistence.BoardVO;
+import com.ict.persistence.SearchCriteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -19,10 +20,9 @@ public class BoardServiceTests {
 	private BoardService service;
 	
 	//@Test
-	//public void getList() {
-	//	Long pageNum = 1L;
-	//	log.info(service.getList(pageNum));
-	//}
+	public void getList() {
+		//log.info(service.getList());
+	}
 	
 	// insert 도 테스트 한 번 해주세요.
 	//@Test
@@ -53,7 +53,12 @@ public class BoardServiceTests {
 	
 	//@Test
 	public void detailTest() {
-		service.getDetail(1L);
+		service.getDetail(22L);
+	}
+	
+	//@Test
+	public void getBoardCountTest(SearchCriteria cri) {
+		service.getBoardCount(cri);
 	}
 	
 }

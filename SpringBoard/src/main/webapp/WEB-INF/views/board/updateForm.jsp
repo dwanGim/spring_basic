@@ -14,6 +14,9 @@
 		<input type="text" name="writer" value="${board.writer  }" required/>
 		<textarea name="content" requirer>${board.content }</textarea>
 		<input type="hidden" name="bno" value="${board.bno }">
+		<input type="hidden" name="page" value="${param.page}"/>
+		<input type="hidden" name="searchType" value="${param.searchType}"/>
+		<input type="hidden" name="keyword" value="${param.keyword}"/>
 		<input type="submit">
 	</form>
 </body>

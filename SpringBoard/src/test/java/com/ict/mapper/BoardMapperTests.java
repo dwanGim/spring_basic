@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ict.persistence.BoardVO;
-import com.ict.persistence.Criteria;
+import com.ict.persistence.SearchCriteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -23,10 +23,9 @@ public class BoardMapperTests {
 	private BoardMapper mapper;
 	
 	//@Test
-	//public void getListTest() {
-	//	Crite
-	//	log.info(mapper.getList(cri));
-	//}
+	public void getListTest() {
+		//log.info(mapper.getList());
+	}
 	
 	//@Test
 	public void insertTest() {
@@ -50,7 +49,7 @@ public class BoardMapperTests {
 	// 뒤에 L을 붙여야 합니다.
 	//@Test
 	public void deleteTest() {
-		mapper.delete(24L);
+		mapper.delete(5L);
 	}
 	
 	//@Test
@@ -72,8 +71,8 @@ public class BoardMapperTests {
 	}
 	
 	@Test
-	public void getBoardCountTest() {
-		mapper.getBoardCount();
+	public void getBoardCountTest(SearchCriteria cri) {
+		mapper.getBoardCount(cri);
 	}
 	
 	
