@@ -40,7 +40,7 @@ public class TestController {
 		for (int i=0; i<10; i++) {
 			TestVO vo = new TestVO();
 			vo.setMno(i);
-			vo.setName(i + "완");
+			vo.setName(i + "JSON");
 			vo.setAge(20 + i);
 			list.add(vo);
 		}

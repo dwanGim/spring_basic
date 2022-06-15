@@ -64,3 +64,23 @@ commit;
 
 
 SELECT * FROM board_tbl WHERE TITLE like '%' || 'seco' || '%';
+
+
+CREATE table reply_tbl (
+    rno number(10, 0) ,
+    bno number(10, 0) not null,
+    reply varchar2(1000) not null,
+    replyer varchar2(50) not null,
+    replyDate date default sysdate,
+    updateDate date default sysdate
+    );
+    
+CREATE SEQUENCE reply_num;
+
+ALTER TABLE reply_tbl ADD CONSTRAINT pk_reply PRIMARY KEY(rno);
+
+ALTER TABLE reply_tbl ADD CONSTRAINT fk_reply FOREIGN KEY (bno) REFERENCES board_tbl(bno);
+
+SELECT * FROM reply_tbl;
+
+    
