@@ -17,25 +17,28 @@ public class ReplyServiceImpl implements ReplyService{
 	@Override
 	public void addReply(ReplyVO vo) {
 		// TODO Auto-generated method stub
-		
+		mapper.create(vo);
 	}
 
 	@Override
 	public List<ReplyVO> listReply(Long bno) {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.getList(bno);
 	}
 
 	@Override
 	public void modifyReply(ReplyVO vo) {
 		// TODO Auto-generated method stub
-		
+		mapper.update(vo);
 	}
 
 	@Override
 	public void removeReply(Long rno) {
 		// TODO Auto-generated method stub
-		
+		mapper.delete(rno);
 	}
+
+
+
 
 }

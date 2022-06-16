@@ -83,4 +83,4 @@ ALTER TABLE reply_tbl ADD CONSTRAINT fk_reply FOREIGN KEY (bno) REFERENCES board
 
 SELECT * FROM reply_tbl;
 
-    
+commit;
