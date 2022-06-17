@@ -77,6 +77,8 @@ CREATE table reply_tbl (
     
 CREATE SEQUENCE reply_num;
 
+ALTER SEQUENCE reply_num NOCACHE;
+
 ALTER TABLE reply_tbl ADD CONSTRAINT pk_reply PRIMARY KEY(rno);
 
 ALTER TABLE reply_tbl ADD CONSTRAINT fk_reply FOREIGN KEY (bno) REFERENCES board_tbl(bno);
