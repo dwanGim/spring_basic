@@ -43,7 +43,7 @@ public class ReplyController {
 		try {
 			// 먼저 글쓰기 로직 실행 후 에러가 없다면
 			service.addReply(vo);
-			entity = new ResponseEntity<String>("Success", HttpStatus.OK);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 		} catch(Exception e) {
 			// error 가 생겼을 때
 			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
