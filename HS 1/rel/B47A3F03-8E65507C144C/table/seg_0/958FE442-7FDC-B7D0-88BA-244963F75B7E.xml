@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="958FE442-7FDC-B7D0-88BA-244963F75B7E" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="USER_TBL">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>USER_TBL</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USER_ID" id="B864C356-D8FF-0A6C-1A6B-3E7921656D13">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>USER_ID</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PW" id="1C1A83A6-7314-970C-10D2-B10CE4560103">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>PW</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="0AC26CB3-1DEF-4EFD-8A19-1F13D2F21D60">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GENDER" id="974ED2F7-DC0D-C750-2160-0B8E3BCB8B66">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>GENDER</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<constraintName>BOOLEANTEST_GENDER_CK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="gender = &apos;0&apos; OR gender=&apos;1&apos;"/>
+<implementationDef dbType="Oracle Database 12cR2" definition="gender = &apos;0&apos; OR gender=&apos;1&apos;"/>
+</checkConstraint>
+<defaultValue>&apos;0&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="EE0E61FF-6149-E5FF-7AB3-47D2813EE9C5">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE_NUM" id="DD693C18-1B21-0F0C-AD13-90BC1D1112BB">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>PHONE_NUM</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS" id="A1A805CF-1CE3-B86E-A7CA-DEC58DEBE07F">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>USER_TBL</sourceObjSchema>
+<sourceObjName>ADDRESS</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DAAF319-9577-DE3D-4619-31E8A77175FD" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="USER_TBL_PK">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>SYS_C009617</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:28 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B864C356-D8FF-0A6C-1A6B-3E7921656D13"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

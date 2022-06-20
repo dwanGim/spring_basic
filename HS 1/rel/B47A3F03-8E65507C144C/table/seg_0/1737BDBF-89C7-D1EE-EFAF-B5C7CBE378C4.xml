@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1737BDBF-89C7-D1EE-EFAF-B5C7CBE378C4" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="PLAYER_TBL">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>PLAYER_TBL</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PNO" id="15A769CF-62E4-4276-0B77-5526D382C01A">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>PLAYER_TBL</sourceObjSchema>
+<sourceObjName>PNO</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NICKNAME" id="3B0B9458-789A-B651-2E76-AF0DDF203585">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>PLAYER_TBL</sourceObjSchema>
+<sourceObjName>NICKNAME</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEAM_NAME" id="B37ADC82-AB04-BC29-7678-922A24F55C2F">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>PLAYER_TBL</sourceObjSchema>
+<sourceObjName>TEAM_NAME</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="550B6B1E-3318-AB48-7FB8-8FB753856919" referredColumn="1FFA296F-4763-1925-5C7B-3B0135A8D4EE"/>
+</associations>
+</Column>
+<Column name="SELF_INTRO" id="034995AF-B3CA-6F26-2238-5C93F07D7E47">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>PLAYER_TBL</sourceObjSchema>
+<sourceObjName>SELF_INTRO</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSITION" id="FD615BC2-B8B5-1916-418A-E0180CAED3B5">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>PLAYER_TBL</sourceObjSchema>
+<sourceObjName>POSITION</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_ID" id="A159DCE5-A3DE-DD6C-4667-56217590E364">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>PLAYER_TBL</sourceObjSchema>
+<sourceObjName>USER_ID</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3315BCE0-7EE7-8972-7C9C-2FD202B0C522" referredColumn="B864C356-D8FF-0A6C-1A6B-3E7921656D13"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DB91CD64-3BDE-23D8-39EC-7B8C465ECB16" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="PLAYER_TBL_PK">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>SYS_C009639</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15A769CF-62E4-4276-0B77-5526D382C01A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D2DE0A7-2C3C-336F-D6A2-7581AE661F17" name="FK_CODE3">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:56 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B37ADC82-AB04-BC29-7678-922A24F55C2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5813A96F-B424-CD29-AC27-A3E9CD941BBD" name="FK_CODE4">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:56 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A159DCE5-A3DE-DD6C-4667-56217590E364"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

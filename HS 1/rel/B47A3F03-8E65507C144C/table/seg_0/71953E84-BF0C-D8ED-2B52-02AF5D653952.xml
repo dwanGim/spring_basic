@@ -1,0 +1,205 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71953E84-BF0C-D8ED-2B52-02AF5D653952" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="BOARD_TBL">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>BOARD_TBL</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:47 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BNO" id="417DB327-7806-22CE-0455-8BC70AC74DC9">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>BNO</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITLE" id="04B856D7-9938-D716-065E-1D91504D06A0">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>TITLE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGO" id="938E7DAF-CF77-E9AD-D822-3568C88088F3">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>CATEGO</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIT" id="AAA7CCE6-3C11-160A-52CA-9081D51FA4A7">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>HIT</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="897661E8-2E93-B641-5186-DA374D5A4389">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>CONTENT</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000 BYTE</dataTypeSize>
+<ownDataTypeParameters>2000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WRITER" id="2F3C21C4-5233-7D69-AFC7-9450FE4AAB20">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>WRITER</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EC6A905B-AF36-12B5-2FB2-8874E89A12FF" referredColumn="B864C356-D8FF-0A6C-1A6B-3E7921656D13"/>
+</associations>
+</Column>
+<Column name="IMAGE" id="0AAFA892-3A9E-CFCC-03A8-6D1DCEDE13E4">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>IMAGE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REGDATE" id="1435DD7E-3D3D-4132-4B0B-CD7EFAFDF02C">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>REGDATE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>sysdate</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATEDATE" id="67BAC044-F173-56C9-90E3-EDA764DD92BF">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>UPDATEDATE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>sysdate</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAMEDATE" id="8ABA88CD-9CF4-B5F8-22DA-21B5EC79F82C">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>GAMEDATE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAMEPLACE" id="B927EA3D-9B73-DAEF-A873-186EBB7B7F9F">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>BOARD_TBL</sourceObjSchema>
+<sourceObjName>GAMEPLACE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:48 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8A68E7CC-B1C3-540F-8F76-F80D431D9E2A" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="BOARD_TBL_PK">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>SYS_C009628</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:49 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="417DB327-7806-22CE-0455-8BC70AC74DC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="156DC0E6-F226-F097-85D1-E4DF52152339" name="FK_CODE2">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:50 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F3C21C4-5233-7D69-AFC7-9450FE4AAB20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

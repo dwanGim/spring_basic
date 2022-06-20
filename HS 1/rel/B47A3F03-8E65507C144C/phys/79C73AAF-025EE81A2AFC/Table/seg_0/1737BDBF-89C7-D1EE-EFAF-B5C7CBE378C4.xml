@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PLAYER_TBL" directorySegmentName="seg_0" id="1737BDBF-89C7-D1EE-EFAF-B5C7CBE378C4">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<schemaObject>28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>0FFC4FE6-D962-08BA-0260-587D50C038D3</segment>
+<tableSpace>2ACFF28B-2403-7B6D-8D58-8C3D0FB18BD6</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SELF_INTRO" id="034995AF-B3CA-6F26-2238-5C93F07D7E47">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PNO" id="15A769CF-62E4-4276-0B77-5526D382C01A">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NICKNAME" id="3B0B9458-789A-B651-2E76-AF0DDF203585">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_ID" id="A159DCE5-A3DE-DD6C-4667-56217590E364">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEAM_NAME" id="B37ADC82-AB04-BC29-7678-922A24F55C2F">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="POSITION" id="FD615BC2-B8B5-1916-418A-E0180CAED3B5">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CODE4" id="5813A96F-B424-CD29-AC27-A3E9CD941BBD">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:56 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CODE3" id="9D2DE0A7-2C3C-336F-D6A2-7581AE661F17">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:56 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PLAYER_TBL_PK" id="DB91CD64-3BDE-23D8-39EC-7B8C465ECB16">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:55 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<schemaObject>28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C</schemaObject>
+<segment>97FC9A7E-CF47-1181-273C-D7099B17772F</segment>
+<tableSpace>2ACFF28B-2403-7B6D-8D58-8C3D0FB18BD6</tableSpace>
+<indexSegment>97FC9A7E-CF47-1181-273C-D7099B17772F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

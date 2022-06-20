@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="C##MYDATA" directorySegmentName="seg_0" id="B1B87F7E-721A-AB10-7788-177002E1ABA9">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjName>C##MYDATA</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:03:46 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<schemaObject>28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C</schemaObject>
+<defTableSpace>2ACFF28B-2403-7B6D-8D58-8C3D0FB18BD6</defTableSpace>
+<privileges>UNLIMITED TABLESPACE</privileges>
+</UserOraclev10g>

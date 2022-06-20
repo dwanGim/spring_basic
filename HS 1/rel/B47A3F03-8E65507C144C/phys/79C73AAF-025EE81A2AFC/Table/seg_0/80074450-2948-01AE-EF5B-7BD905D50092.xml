@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="TEAM_TBL" directorySegmentName="seg_0" id="80074450-2948-01AE-EF5B-7BD905D50092">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<schemaObject>28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>0FFC4FE6-D962-08BA-0260-587D50C038D3</segment>
+<tableSpace>2ACFF28B-2403-7B6D-8D58-8C3D0FB18BD6</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TEAM_NAME" id="1FFA296F-4763-1925-5C7B-3B0135A8D4EE">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GAME_HIT" id="3B4E4AB9-2C49-9657-362C-BDBD1C2C0853">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MEMBER_COUNT" id="66CB3409-B2BC-FC7F-E0CF-BA07C601DBE3">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEAM_INFO" id="86C7F89D-5FCA-2743-5B65-E035B145DA0A">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEAM_LEADER" id="8A8198FA-9058-1F29-CC64-94C19DE97FDA">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TEAM_TBL_PK" id="99ADDA05-0B2F-AFBA-1BC2-3203618F70D3">
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<schemaObject>28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C</schemaObject>
+<segment>97FC9A7E-CF47-1181-273C-D7099B17772F</segment>
+<tableSpace>2ACFF28B-2403-7B6D-8D58-8C3D0FB18BD6</tableSpace>
+<indexSegment>97FC9A7E-CF47-1181-273C-D7099B17772F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

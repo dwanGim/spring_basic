@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="80074450-2948-01AE-EF5B-7BD905D50092" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="TEAM_TBL">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>TEAM_TBL</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TEAM_NAME" id="1FFA296F-4763-1925-5C7B-3B0135A8D4EE">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>TEAM_TBL</sourceObjSchema>
+<sourceObjName>TEAM_NAME</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEAM_LEADER" id="8A8198FA-9058-1F29-CC64-94C19DE97FDA">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>TEAM_TBL</sourceObjSchema>
+<sourceObjName>TEAM_LEADER</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_HIT" id="3B4E4AB9-2C49-9657-362C-BDBD1C2C0853">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>TEAM_TBL</sourceObjSchema>
+<sourceObjName>GAME_HIT</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_COUNT" id="66CB3409-B2BC-FC7F-E0CF-BA07C601DBE3">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>TEAM_TBL</sourceObjSchema>
+<sourceObjName>MEMBER_COUNT</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEAM_INFO" id="86C7F89D-5FCA-2743-5B65-E035B145DA0A">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>TEAM_TBL</sourceObjSchema>
+<sourceObjName>TEAM_INFO</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000 BYTE</dataTypeSize>
+<ownDataTypeParameters>2000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="99ADDA05-0B2F-AFBA-1BC2-3203618F70D3" schemaObject="28BD821A-4C5D-47C6-3D68-DEFBD5D10E0C" name="TEAM_TBL_PK">
+<sourceConnName>half-space</sourceConnName>
+<sourceObjSchema>C##MYDATA</sourceObjSchema>
+<sourceObjName>SYS_C009635</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-06-20 11:04:19 UTC</createdTime>
+<ownerDesignName>HS 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1FFA296F-4763-1925-5C7B-3B0135A8D4EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
