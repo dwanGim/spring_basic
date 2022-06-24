@@ -57,31 +57,31 @@
 	</ul>
 	
 	<!-- 검색창 위치 -->
-	<select name="seatchType">
-		<option value="n" ${cri.seachType == null ? 'selected' : '' }>
+	<select name="searchType">
+		<option value="n" ${pageMaker.cri.searchType == null ? 'selected' : '' }>
 		-
 		</option>
-		<option value="t" ${cri.seachType == 't' ? 'selected' : '' }>
+		<option value="t" ${pageMaker.cri.searchType == 't' ? 'selected' : '' }>
 		제목
 		</option>
-		<option value="c" ${cri.seachType == 'c' ? 'selected' : '' }>
+		<option value="c" ${pageMaker.cri.searchType == 'c' ? 'selected' : '' }>
 		본문
 		</option>
-		<option value="w" ${cri.seachType == 'w' ? 'selected' : '' }>
+		<option value="w" ${pageMaker.cri.searchType == 'w' ? 'selected' : '' }>
 		글쓴이
 		</option>
-		<option value="tc" ${cri.seachType == 'tc' ? 'selected' : '' }>
+		<option value="tc" ${pageMaker.cri.searchType == 'tc' ? 'selected' : '' }>
 		제목 + 본문
 		</option>
-		<option value="cw" ${cri.seachType == 'cw' ? 'selected' : '' }>
+		<option value="cw" ${pageMaker.cri.searchType == 'cw' ? 'selected' : '' }>
 		본문 + 글쓴이
 		</option>
-		<option value="tcw" ${cri.seachType == 'tcw' ? 'selected' : '' }>
+		<option value="tcw" ${pageMaker.cri.searchType == 'tcw' ? 'selected' : '' }>
 		제목 + 본문 + 글쓴이
 		</option>
 	</select>
 	
-	<input type="text" name="keyword" id="keywordInput" value="${cri.keyword }">
+	<input type="text" name="keyword" id="keywordInput" value="${pageMaker.cri.keyword }">
 	<button id="searchBtn">검색하기</button><br>
 	
 	${pageMaker}
