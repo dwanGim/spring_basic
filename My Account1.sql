@@ -86,3 +86,10 @@ ALTER TABLE reply_tbl ADD CONSTRAINT fk_reply FOREIGN KEY (bno) REFERENCES board
 SELECT * FROM reply_tbl;
 
 commit;
+
+
+CREATE TABLE tbl_test1 ( col1 varchar(50));
+CREATE TABLE tbl_test2 ( col2 varchar(5));
+
+SELECT * FROM tbl_test1;
+SELECT * FROM tbl_test1;
