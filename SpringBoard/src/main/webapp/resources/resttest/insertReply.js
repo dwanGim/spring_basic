@@ -22,7 +22,7 @@
 				if(result == 'SUCCESS'){
 					alert("등록 되었습니다.");
 					getAllList();
-					$("#newReplyWriter").val('');
+					$("#newReplyer").val('');
 					$("#newReplyText").val('');
 				}
 			}

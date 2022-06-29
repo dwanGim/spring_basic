@@ -2,6 +2,8 @@ package com.ict.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.ict.persistence.BoardVO;
 import com.ict.persistence.Criteria;
 import com.ict.persistence.SearchCriteria;
@@ -29,5 +31,8 @@ public interface BoardMapper {
 	public BoardVO getDetail(Long bno);
 	
 	public Long getBoardCount(SearchCriteria cri);
+	
+	public void updateReplyCount(@Param("bno") Long bno,
+									@Param("amount") int amount);
 	
 }

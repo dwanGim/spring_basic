@@ -99,6 +99,12 @@
 			뭔가 붙여야 하므로 bno가 0보다 큰 경우로 -->
 			bno > 0
 	</select>
+	
+	<update id = "updateReplyCount">
+		UPDATE board_tbl
+			SET
+		replycount = replycount + #{amount} WHERE bno = #{bno}
+	</update>
 
 
 </mapper>

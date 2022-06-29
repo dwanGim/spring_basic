@@ -92,4 +92,18 @@ CREATE TABLE tbl_test1 ( col1 varchar(50));
 CREATE TABLE tbl_test2 ( col2 varchar(5));
 
 SELECT * FROM tbl_test1;
-SELECT * FROM tbl_test1;
+SELECT * FROM board_tbl;
+SELECT * FROM reply_tbl;
+
+-- 댓글 개수 컬럼을 테이블에 추가했습니다.
+ALTER TABLE board_tbl add(replycount number default 0);
+
+-- 현재 엮인 댓글을 계산해서 replycount에 입력해 업데이트해주었습니다.
+UPDATE board_tbl SET replycount =
+
+    (SELECT COUNT(rno) FROM reply_tbl
+
+    WHERE reply_tbl.bno = board_tbl.bno);
+    
+commit;
+

@@ -131,7 +131,7 @@ public class BoardController {
 		rttr.addAttribute("searchType", cri.getSearchType());
 		rttr.addAttribute("keyword", cri.getKeyword());
 		
-		// 해당 글 번호의 디테일 페이지로 돌아가서 수정 여부를 바로 확인할 수 있게 도와줍ㄴ디ㅏ.
+		// 해당 글 번호의 디테일 페이지로 돌아가서 수정 여부를 바로 확인할 수 있게 도와줍니다.
 		return "redirect:/board/detail";
 	}
 	
