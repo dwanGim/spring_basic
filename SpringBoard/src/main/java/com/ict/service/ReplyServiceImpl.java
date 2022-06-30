@@ -20,7 +20,7 @@ public class ReplyServiceImpl implements ReplyService{
 	private BoardMapper boardMapper;
 
 	@Override
-	@Transactional
+	//@Transactional
 	public void addReply(ReplyVO vo) {
 		Long bno = vo.getBno();
 		
