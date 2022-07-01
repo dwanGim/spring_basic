@@ -1,4 +1,4 @@
-package com.ict.comtroller;
+package com.ict.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
