@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>all 로그인 성공</h1>
+	
+	<a href="/customLogout">로그아웃</a>
 
 </body>
 </html>

@@ -7,6 +7,9 @@
 	http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<bean id="customAccessDenied" class="com.ict.security.CustomAccessDeniedHandler"/>
+	<bean id="customLoginSuccess" class="com.ict.security.CustomLoginSuccessHandler"/>
+
 	<!-- 접속 시 폼 계정 등 -->
 	<security:http>
 		
@@ -17,10 +20,18 @@
 		<security:intercept-url pattern="/secu/member" access="hasRole('ROLE_MEMBER')"/>
 		<!-- secu/admin은 admin에게만 접근 허용 -->
 		<security:intercept-url pattern="/secu/admin" access="hasRole('ROLE_ADMIN')" />	
-		<security:form-login/>
 		
 		<!-- 에러페이징 -->
-		<security:access-denied-handler error-page="/accessError"/>
+		<!-- 디폴트 accessdeniedhandler 대신 커스텀을 쓰도록 수정하였습니다. -->
+		<!--  <security:access-denied-handler error-page="/accessError"/>-->
+		<security:access-denied-handler ref="customAccessDenied"/>
+		<!-- beans graph에 추가되어있는지 확인해주세요 -->
+	
+		<!-- 로그아웃 처리 -->
+		<security:logout logout-url="/customLogout" invalidate-session="true"/>
+
+		<security:form-login login-page="/customLogin"
+				authentication-success-handler-ref="customLoginSuccess"/>
 		
 	</security:http>
 	
@@ -28,17 +39,18 @@
 	<security:authentication-manager>
 		<security:authentication-provider>
 		
-			<!-- 스프링 시큐리티에서는 반드시 비밀번호를 암호화해서 처리하도록 강제됩니다.
-			아직 암호화 설정을 하지 않았기 때문에 암호화 이전에 로그인만 테스트하기 위해
-			비밀번호 앞에 "{noop}"를 추가해 암호화 기능을 꺼두었습니다. -->
-			<security:user-service>
+			
+			<!-- <security:user-service>
 				<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER" />
-				<!-- admin role과 member role을 함꼐 주어야 접속이 가능해집니다. -->
+				admin role과 member role을 함꼐 주어야 접속이 가능해집니다.
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER, ROLE_ADMIN"/>
-			</security:user-service>
+			</security:user-service> 
+		 	-->
+		 	
+		 	<!--  이제 인증 매니저는 DB를 쓰도록 변경합니다. Hikari 설정을 dataSource라는 이름으로 해두었으므로 연결해줍니다 -->
+		 	<security:jdbc-user-service data-source-ref="dataSource"/>
+		 	
 		</security:authentication-provider>
-		
-		
 		
 	</security:authentication-manager>
 

@@ -107,3 +107,37 @@ UPDATE board_tbl SET replycount =
     
 commit;
 
+
+CREATE TABLE users (
+    username varchar2(50) not null primary key,
+    password varchar2(100) not null,
+    enabled char(1) default '1');
+    
+    
+CREATE TABLE authorities(
+    username varchar2(50) not null,
+    authority varchar2(50) not null,
+    CONSTRAINT fk_authorities_users FOREIGN KEY (username) REFERENCES users(username));
+    
+CREATE UNIQUE INDEX ix_auth_username ON authorities (username, authority);
+
+INSERT INTO users (username, password) VALUES ('user00', 'pw00');
+INSERT INTO users (username, password) VALUES ('member00', 'pw00');
+INSERT INTO users (username, password) VALUES ('admin00', 'pw00');
+
+INSERT INTO authorities (username, authority) VALUES ('user00', 'ROLE_USER');
+INSERT INTO authorities (username, authority) VALUES ('member00', 'ROLE_MEMBER');
+INSERT INTO authorities (username, authority) VALUES ('admin00', 'ROLE_MEMBER');
+INSERT INTO authorities (username, authority) VALUES ('admin00', 'ROLE_ADMIN');
+commit;
+
+SELECT * FROM users;
+SELECT * FROM authorities;
+
+
+
+
+
+
+
+
