@@ -134,10 +134,28 @@ commit;
 SELECT * FROM users;
 SELECT * FROM authorities;
 
+CREATE TABLE member_tbl (
+    userid varchar2(50) not null primary key,
+    userpw varchar2(100) not null,
+    username varchar2(100) not null,
+    regdate date default sysdate,
+    updatedate date default sysdate,
+    enabled char(1) default '1');
 
+CREATE TABLE member_auth(
+    userid varchar2(50) not null,
+    auth varchar2(50) not null,
+    CONSTRAINT fk_member_auth FOREIGN KEY (userid) REFERENCES member_tbl(userid)
+);
 
+SELECT * FROM member_auth;
+SELECT * FROM member_tbl;
 
+commit;
 
-
-
-
+		SELECT
+			m.userid, userpw, username, enabled, regdate, updatedate, a.auth
+				FROM
+			member_tbl m LEFT OUTER JOIN member_auth a on m.userid = a.userid
+				WHERE
+			m.userid = 'user25';
