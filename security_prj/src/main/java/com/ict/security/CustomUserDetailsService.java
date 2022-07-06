@@ -6,6 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.ict.domain.CustomUser;
+import com.ict.domain.MemberVO;
 import com.ict.mapper.MemberMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -22,7 +24,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 		
 		log.warn("유저 이름 확인 : " + username);
 		
-		return null;
+		MemberVO vo = mapper.read(username);
+		
+		log.warn("확인된 username으로부터의 정보 디버깅 : " + vo);
+		
+		return vo == null? null : new CustomUser(vo);
 	}
 
 	

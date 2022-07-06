@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,7 @@
 	<form action="/login" method="post">
 		아이디 : <input type="text" name="username" ><br/>
 		비밀번호 : <input type="text" name="password"><br/>
+		자동로그인 : <input type="checkbox" name="remember-me"><br/>
 		<input type="submit" value="로그인하기">
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
 	</form>
