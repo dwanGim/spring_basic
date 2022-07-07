@@ -77,7 +77,9 @@
 	<script>
 	//해당 글 글번호
 	let bno = ${board.bno};
-	
+	let csrfHeaderName = ${_csrf.headerName};
+	let csrfTokenValue = ${csrf.token};
+
 	// 댓글 전체 불러오기
 	
 					// 백틱 문자열 사이에 변수를 넣고 싶다면 \${변수명} 을 적습니다.

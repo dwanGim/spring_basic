@@ -35,7 +35,6 @@
 		</sql>
 	
 	
-	
 	<select id="getList" resultType="com.ict.persistence.BoardVO">
 		<!-- <이나 >과 같이 태그로 오인될 수 있는 문자를 포함하는
 		쿼리문은 그냥 작성하지 않고, CDATA를 이용합니다.

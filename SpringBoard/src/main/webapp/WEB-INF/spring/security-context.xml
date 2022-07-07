@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="customAccessDenied" class="com.ict.security.CustomAccessDeniedHandler"/>
+	<bean id="customLoginSuccess" class="com.ict.security.CustomLoginSuccessHandler"/>
+	<!-- 비밀번호 복호화 -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	<bean id="customUserDetailsService" class="com.ict.security.CustomUserDetailsService"/>
+	
+	<!-- 접속 시 폼 계정 등 -->
+	<security:http>
+		
+		
+		<!-- 에러페이징 -->
+		<!-- 디폴트 accessdeniedhandler 대신 커스텀을 쓰도록 수정하였습니다. -->
+		<!--  <security:access-denied-handler error-page="/accessError"/>-->
+		<security:access-denied-handler ref="customAccessDenied"/>
+		<!-- beans graph에 추가되어있는지 확인해주세요 -->
+	
+		<!-- 로그아웃 처리 -->
+		<security:logout logout-url="/customLogout" invalidate-session="true"
+			delete-cookies="remember-me,JSESSIONID"/>
+
+		<security:form-login login-page="/customLogin"
+				authentication-success-handler-ref="customLoginSuccess"/>
+		
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
+		
+	</security:http>
+	
+		<!-- 인증 -->
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+
+			<!--  <security:jdbc-user-service data-source-ref="dataSource"/>-->
+		
+			<security:password-encoder ref="bcryptPasswordEncoder"/>
+		
+		</security:authentication-provider>
+		
+	</security:authentication-manager>
+
+
+</beans>

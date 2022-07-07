@@ -39,6 +39,7 @@ SELECT *
 /*+ INDEX_DESC(board_tbl pk_board) */
 FROM board_tbl ORDER BY bno DESC;
 
+CREATE 
 
 SELECT
 /*+ INDEX_DESC(board_tbl pk_board) */
@@ -173,3 +174,61 @@ CREATE TABLE persistent_logins (
 commit;
 SELECT * FROM persistent_logins;
 --DROP TABLE persistent_logins;
+
+CREATE SEQUENCE test_num
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+
+
+ALTER TABLE test_1 ADD CONSTRAINT pk_test PRIMARY KEY(tblnum);
+CREATE TABLE test_1 (
+    tblnum number(10, 0),
+    address varchar2(10)
+    
+);
+ALTER SEQUENCE test_num NOCACHE;
+
+--DROP TABLE test_1;
+
+INSERT INTO test_1(tblnum, address) VALUES (test_num.nextval , 'test');
+INSERT INTO test_1(tblnum, address) VALUES (test_num.nextval , 'test2');
+INSERT INTO test_1(tblnum, address) VALUES (test_num.nextval , 'test3');
+
+SELECT tblnum, address FROM test_1;
+
+--create table test_2 + Integer.toString(tblNum);
+-- sql = sql + "(boardId	number	primary key)";
+
+SELECT * FROM test_2;
+;
+;
+SELECT *
+ FROM DBA_OBJECTS;
+
+
+--CREATE OR REPLACE PROCEDURE test_2 (
+tblnum2           IN test_1.tblnum%TYPE,
+ADDR2         IN test_1.address%TYPE
+)
+IS
+    V_SQLSTMT VARCHAR2(500);
+BEGIN
+    INSERT INTO test_1
+    VALUES(tblnum2, ADDR2);
+    
+    V_SQLSTMT :=
+     'CREATE TABLE TBL_' || tblnum2 ||
+     '(  tblnum number(10, 0),
+        address varchar2(10)
+     )';
+    
+    EXECUTE IMMEDIATE V_SQLSTMT; --V_SQLSTMT변수에 저장된 쿼리문 실행
+END;
+;
+
+
+-----------------

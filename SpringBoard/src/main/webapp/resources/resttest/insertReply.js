@@ -1,6 +1,8 @@
 	///////////////////////////////
 	// 글 등록로직
 	///////////////////////////////
+
+
 	$("#replyAddBtn").on("click", function(){
 		let replyer = $("#newReplyer").val();
 		let reply = $("#newReplyText").val();
@@ -8,6 +10,11 @@
 		$.ajax({
 			type : 'post',
 			url : '/replies',
+			
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+			},
+			
 			headers : {
 				"Content-Type" : "application/json",
 				"X-HTTP-Method-Override" : "POST"

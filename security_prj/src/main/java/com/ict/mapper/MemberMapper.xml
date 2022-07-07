@@ -34,6 +34,23 @@
 				WHERE
 			m.userid = #{userId}
 	</select>
+	
+	<insert id="insertMemberTbl">
+		INSERT INTO member_tbl(userid, userpw, username)
+			VALUES
+		(#{userId}, #{userPw}, #{userName})
+	</insert>
+	
+	<update id="insertMemberAuth">
+		INSERT ALL
+		<foreach collection="authList" item="item" separator=" ">
+			INTO member_auth(userid, auth)
+				VALUES
+			(#{item.userId}, #{item.auth})
+		</foreach>
+		SELECT *
+			FROM DUAL
+	</update>
 		
 </mapper>
 

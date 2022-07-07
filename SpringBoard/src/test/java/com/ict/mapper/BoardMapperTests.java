@@ -65,12 +65,12 @@ public class BoardMapperTests {
 		mapper.update(vo);
 	}
 	
-	//@Test
+	@Test
 	public void getDetailTest() {
 		mapper.getDetail(1L);
 	}
 	
-	@Test
+	//@Test
 	public void getBoardCountTest(SearchCriteria cri) {
 		mapper.getBoardCount(cri);
 	}

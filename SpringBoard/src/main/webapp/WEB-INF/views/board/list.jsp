@@ -87,6 +87,10 @@
 	
 	${pageMaker}
 	<script>
+	let csrfHeaderName = ${_csrf.headerName};
+	let csrfTokenValue = ${csrf.token};
+
+		
 		//검색버튼 작동
 		$('#searchBtn').on("click", function(event){
 			self.location = "list"

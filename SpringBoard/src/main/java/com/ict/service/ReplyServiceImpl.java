@@ -42,7 +42,7 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	@Transactional
+	//@Transactional
 	public void removeReply(Long rno) {
 
 		// rno를 통해 bno 정의
