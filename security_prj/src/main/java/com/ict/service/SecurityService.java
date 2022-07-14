@@ -6,5 +6,12 @@ import com.ict.domain.MemberVO;
 
 public interface SecurityService {
 
-	public void insertMember(MemberVO vo);
+	public void insertMemberTbl(MemberVO vo);
+	
+	
+	public MemberVO read(String userId);
+	
+	
+	public void insertAuthTbl(MemberVO vo);
+	
 }

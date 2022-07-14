@@ -14,11 +14,23 @@ public class SecurityServiceImpl implements SecurityService{
 	private MemberMapper mapper;
 	
 	@Override
-	public void insertMember(MemberVO vo) {
+	public void insertMemberTbl(MemberVO vo) {
 		
 		mapper.insertMemberTbl(vo);
 		mapper.insertMemberAuth(vo);
 		
+		
+	}
+
+	@Override
+	public MemberVO read(String userId) {
+		// TODO Auto-generated method stub
+		return mapper.read(userId);
+	}
+
+	@Override
+	public void insertAuthTbl(MemberVO vo) {
+		// TODO Auto-generated method stub
 		
 	}
 

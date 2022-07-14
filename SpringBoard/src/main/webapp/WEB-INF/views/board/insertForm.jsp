@@ -119,10 +119,12 @@
 											obj.uploadPath + "/"
 											+ obj.uuid + "_" + obj.fileName);
 						
-						str += `<li><a href='/board/download?fileName=\${fileCallPath}'>
+						str += `<li data-path='\${obj.uploadPath}' data-uuid='\${obj.uuid}'
+									data-filename='\${obj.fileName}' data-type='\${obj.image}'>
+									<a href='/board/download?fileName=\${fileCallPath}'>
 										<img src='/resources/fileThumbnail.png'>\${obj.fileName}
 									</a>
-									<span class='btn btn-mini' data-file='\${fileCallPath}' data-type='file'> X </span>
+									<span class='btn btn-min' data-file='\${fileCallPath}' data-type='file'> X </span>
 								</li>`;
 						
 					}else{
@@ -137,11 +139,11 @@
 						let fileCallPath2 = encodeURIComponent(
 								obj.uploadPath + "/"
 								+ obj.uuid + "_" + obj.fileName);
-						console.log(fileCallPath);
-						console.log(fileCallPath2);
-
 						
-						str += `<li><a href='/board/download?fileName=\${fileCallPath2}'>
+						
+						str += `<li data-path='\${obj.uploadPath}' data-uuid='\${obj.uuid}'
+									data-filename='\${obj.fileName}' data-type='\${obj.image}'>
+									<a href='/board/download?fileName=\${fileCallPath2}'>
 										<img src='/board/display?fileName=\${fileCallPath}'>\${obj.fileName}
 									</a>
 									<span data-file='\${fileCallPath}' data-type='image'> X </span>

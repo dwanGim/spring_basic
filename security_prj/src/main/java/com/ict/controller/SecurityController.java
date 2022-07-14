@@ -94,7 +94,7 @@ public class SecurityController {
 		// }
 		
 		log.info(vo.getAuthList());
-		service.insertMember(vo);
+		service.insertMemberTbl(vo);
 		
 	} // join (POST)END
 }

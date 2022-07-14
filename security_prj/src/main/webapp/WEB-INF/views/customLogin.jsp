@@ -21,6 +21,11 @@
 		<input type="submit" value="로그인하기">
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
 	</form>
-
+	<c:if test="${url ne null}">
+		<div id="naver_id_login">
+			<a href="${url}"><img width="223"
+				src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a>
+		</div>
+	</c:if>
 </body>
 </html>
