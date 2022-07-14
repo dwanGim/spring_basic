@@ -1,23 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="/resources/uploadAjax.css">
 <head>
+<link rel="stylesheet" href="/resources/uploadAjax.css">
+	<style>
+
+	</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 글쓸때, 제목 글쓴이, 본문 을 채우고 submit을 눌러야 합니다.
-	vo에 적힌 명칭을 감안해서 제목, 글쓴이 본문을 쓸 수 있도록 폼태그를 완성시켜주세요. -->
-	<form action="" method="post">
-		<input type="text" name="title" required/>
-		<input type="text" name="writer" required/>
-		<textarea name="content" required></textarea>
-		<input type="submit">
-	</form>
-		<div class="uploadDiv">
+
+	<h1>upload with ajax</h1>
+	
+	<div class="uploadDiv">
 		<input type="file" name="uploadFile" multiple>
 	</div>
 	
@@ -33,8 +30,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
 	<script>
-		let csrfHeaderName = "${_csrf.headerName}";
-		let csrfTokenValue= "${_csrf.token}";
 	
 		$(document).ready(function(){
 			
@@ -80,10 +75,7 @@
 				console.log(formData);
 				
 				$.ajax({
-					url: '/board/uploadAjaxFormAction', 
-					beforeSend : function(xhr) {
-						 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-						 },
+					url: '/uploadFormAction', 
 					processData : false,
 					contentType: false,
 					data : formData,
@@ -119,7 +111,7 @@
 											obj.uploadPath + "/"
 											+ obj.uuid + "_" + obj.fileName);
 						
-						str += `<li><a href='/board/download?fileName=\${fileCallPath}'>
+						str += `<li><a href='/download?fileName=\${fileCallPath}'>
 										<img src='/resources/fileThumbnail.png'>\${obj.fileName}
 									</a>
 									<span class='btn btn-mini' data-file='\${fileCallPath}' data-type='file'> X </span>
@@ -141,8 +133,8 @@
 						console.log(fileCallPath2);
 
 						
-						str += `<li><a href='/board/download?fileName=\${fileCallPath2}'>
-										<img src='/board/display?fileName=\${fileCallPath}'>\${obj.fileName}
+						str += `<li><a href='/download?fileName=\${fileCallPath2}'>
+										<img src='/display?fileName=\${fileCallPath}'>\${obj.fileName}
 									</a>
 									<span data-file='\${fileCallPath}' data-type='image'> X </span>
 								</li>`;
@@ -165,10 +157,7 @@
 				let targetLi = $(this).closest("li");
 				
 				$.ajax({
-					url : '/board/deleteFile',
-					beforeSend : function(xhr) {
-						 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-						 },
+					url : '/deleteFile',
 				//fileName이란 이름으로 targetFile, type이란 이름으로 type 보내기
 					data : {fileName: targetFile, type:type},
 					dataType : 'text',
@@ -187,5 +176,6 @@
 		});	// document ready END
 	
 	</script>
+
 </body>
 </html>
