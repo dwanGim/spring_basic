@@ -20,6 +20,7 @@ import lombok.extern.log4j.Log4j;
 
 
 @Log4j
+@Data
 public class NaverLoginBO {
 	/* 인증 요청문을 구성하는 파라미터 */
 	// client_id: 애플리케이션 등록 후 발급받은 클라이언트 아이디

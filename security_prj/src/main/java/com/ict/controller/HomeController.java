@@ -49,7 +49,7 @@ public class HomeController {
 	@Autowired
 	private SecurityService service;
 	
-	private String apiResult = null;
+	String apiResult = null;
 	
 	
 	/**
@@ -90,7 +90,7 @@ public class HomeController {
 		throws IOException, ParseException  {
 		System.out.println("code : " + code);
 		System.out.println("state : " + state);
-		System.out.println("session" + session);
+		System.out.println("session : " + session);
 		
 		OAuth2AccessToken oauthToken;
 		oauthToken = naverLoginBO.getAccessToken(session, code, state);

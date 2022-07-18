@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/resources/uploadAjax.css">
@@ -11,13 +12,14 @@
 <body>
 	<!-- 글쓸때, 제목 글쓴이, 본문 을 채우고 submit을 눌러야 합니다.
 	vo에 적힌 명칭을 감안해서 제목, 글쓴이 본문을 쓸 수 있도록 폼태그를 완성시켜주세요. -->
-	<form action="" method="post">
+	<form action="/board/insert" method="post">
 		<input type="text" name="title" required/>
 		<input type="text" name="writer" required/>
 		<textarea name="content" required></textarea>
-		<input type="submit">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token}"/>
+		<input type="submit" id="submitBtn">
 	</form>
-		<div class="uploadDiv">
+	<div class="uploadDiv">
 		<input type="file" name="uploadFile" multiple>
 	</div>
 	
@@ -33,9 +35,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
 	<script>
-		let csrfHeaderName = "${_csrf.headerName}";
-		let csrfTokenValue= "${_csrf.token}";
-	
+		let csrfHeaderName = "${_csrf.headerName}"
+		let csrfTokenValue= "${_csrf.token}"
+
 		$(document).ready(function(){
 			
 			// 정규표현식 : 예).com 끝나는 문장 등의 조건이 복잡한 문장을 컴퓨터에게 이해시키기 위한 구문
@@ -184,6 +186,37 @@
 				}); //  ajax
 				
 			}); // .uploadResult onclick span END
+			
+			
+			$("#submitBtn").on("click", function(e){
+				
+				//버튼의 기능 실행을 막는 e.preventDefault
+				e.preventDefault();
+				
+				let formObj = $("form");
+				
+				let str = "";
+				
+				$(".uploadResult ul li").each(function(i, obj){
+					 
+					let jobj = $(obj);
+					
+					str += `<input type='hidden' name='attachList[\${i}].fileName'
+							value ='\${jobj.data("filename")}'>
+							<input type='hidden' name='attachList[\${i}].uuid'
+							value ='\${jobj.data("uuid")}'>
+							<input type='hidden' name='attachList[\${i}].uploadPath'
+							value ='\${jobj.data("path")}'>	
+							<input type='hidden' name='attachList[\${i}].image'
+							value ='\${jobj.data("image")}'>`;
+				
+				});
+				
+				console.log(str);
+				formObj.append(str);
+			}); // $("#submitBtn").on("click", function End
+			
+			
 			
 			
 		});	// document ready END
