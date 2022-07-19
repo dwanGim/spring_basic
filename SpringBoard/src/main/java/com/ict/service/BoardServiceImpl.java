@@ -8,15 +8,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ict.mapper.BoardAttachMapper;
 import com.ict.mapper.BoardMapper;
+import com.ict.mapper.ReplyMapper;
+import com.ict.persistence.BoardAttachVO;
 import com.ict.persistence.BoardVO;
 import com.ict.persistence.Criteria;
 import com.ict.persistence.SearchCriteria;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @Service
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardMapper mapper;
+	
+	@Autowired
+	private ReplyMapper replyMapper;
 	
 	@Autowired
 	private BoardAttachMapper attachMapper; 
@@ -61,6 +69,18 @@ public class BoardServiceImpl implements BoardService {
 	public Long getBoardCount(SearchCriteria cri) {
 		return mapper.getBoardCount(cri);
 		
+	}
+
+	@Override
+	public List<BoardAttachVO> getAttachList(Long bno) {
+		log.info("get Attach List : " + bno);
+		return attachMapper.findByBno(bno);
+	}
+
+	@Override
+	public boolean remove(Long bno) {
+		
+		return false;
 	}
 	
 }

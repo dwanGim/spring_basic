@@ -216,7 +216,13 @@
 				formObj.append(str);
 			}); // $("#submitBtn").on("click", function End
 			
-			
+			(function() {
+				$.getJSON("/board/getAttachList", {bno: bno}, function(arr){
+					console.log(arr);
+				}); // end getJSOM
+				
+				
+			}); // end anonymous
 			
 			
 		});	// document ready END

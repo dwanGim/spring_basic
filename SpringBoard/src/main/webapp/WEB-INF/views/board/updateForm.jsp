@@ -1,8 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+	.uploadResult {
+		width:100%;
+		backgroud-color:gray;
+	}
+	
+	.uploadResult ul {
+		display: flex;
+		flex-flow:row;
+		justify-content:center;
+		align-items: center;
+	}
+	
+	.uploadResult ul li {
+		list-style : none;
+		padding : 10px;
+		align-content:center;
+		text-align:center;
+	}
+	
+	.uploadResult ul li img {
+		width: 100px;
+	}
+	
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -19,5 +46,14 @@
 		<input type="hidden" name="keyword" value="${param.keyword}"/>
 		<input type="submit">
 	</form>
+	
+	<div class="row">
+		<h3 class="text-primary">첨부파일</h3>
+		<div id="uploadResult">
+			<ul>
+				<!-- 첨부파일이 들어갈 위치 -->
+			</ul>
+		</div><!-- row -->
+	</div>
 </body>
 </html>

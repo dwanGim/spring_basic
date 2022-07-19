@@ -141,6 +141,7 @@ public class BoardController {
 		if(board.getAttachList() != null) {
 			board.getAttachList().forEach(attach -> log.info(attach));
 		}
+
 		
 		// redirect를 사용해야 전체 글 목록을 로딩해온 다음 화면을 열어줍니다.
 		// 스프링 컨트롤러에서 리다이렉트를 할 때는
@@ -416,6 +417,14 @@ public class BoardController {
 		
 		return new ResponseEntity<String>("deleted", HttpStatus.OK);
 	}// deleteFile END
+	
+	@GetMapping(value="/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	public ResponseEntity<List<BoardAttachVO>> getAttachList(Long bno){
+		
+		return new ResponseEntity<>(service.getAttachList(bno), HttpStatus.OK);
+		
+	}
 	
 	
 }

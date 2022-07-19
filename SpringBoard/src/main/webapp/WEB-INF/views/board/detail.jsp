@@ -7,7 +7,31 @@
 <html>
 <head>
 	<link rel="stylesheet" href="/resources/resttest/modal.css">
+<style>
+	.uploadResult {
+		width:100%;
+		backgroud-color:gray;
+	}
+	
+	.uploadResult ul {
+		display: flex;
+		flex-flow:row;
+		justify-content:center;
+		align-items: center;
+	}
+	
+	.uploadResult ul li {
+		list-style : none;
+		padding : 10px;
+		align-content:center;
+		text-align:center;
+	}
+	
+	.uploadResult ul li img {
+		width: 100px;
+	}
 
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -72,7 +96,15 @@
 		</div>
 	</div>
 	
-	
+	<!-- 파일 업로드 영역 -->
+	<div class="row">
+		<h3 class="text-primary">첨부파일</h3>
+		<div id="uploadResult">
+			<ul>
+				<!-- 여기에 첨부파일이 들어갑니다. -->
+			</ul>
+		</div>
+	</div>
 	
 	<script>
 	//해당 글 글번호
@@ -144,6 +176,49 @@
 		$("#replyText").val(replytext);
 		$("#modDiv").show('slow');
 	});// 댓글 모달 show
+	
+	$.getJSON("/board/getAttachList", {bno : bno}, function(arr){
+		
+		console.log(arr);
+		
+		let str = "";
+		
+		$(arr).each(function(i, attach){
+			// image일 때
+			if(attach.fileType) {
+				let fileCallPath = encodeURIComponent(attach.uploadPath +"/s_" +
+							attach.uuid + "_" + attach.fileName);
+				
+				str += `<li data-path=\${attach.uploadPath} data-uuid=\${attach.uuid}
+						data-filename=\${attach.fileName} data-type=\${attach.fileType}>
+						<div>
+							<img src='/display?fileName=\${fileCallPath}'>
+						</div>
+						</li>`;
+			} else {
+				str += `<li data-path=\${attach.uploadPath} data-uuid=\${attach.uuid}
+					data-filename=\${attach.fileName} data-type=\${attach.fileType}>
+					<div>
+						<span>\${attach.fileName}</span><br/>
+						<img src='/resources/fileThumbnail.png' width='100px' height='100px'>
+					</div>
+					</li>`
+			}
+		});
+		$("#uploadResult ul").html(str);
+	});// getJSON END
+	
+	$("#uploadResult").on("click", "li", function(e){
+		
+		let liObj = $(this);
+		
+		let path = encodeURIComponent(liObj.data("path") + "/" + liObj.data("uuid") + "_"
+						+liObj.data("filename"));
+		
+		//download
+		self.location = "/download?fileName=" + path;
+		
+	});
 	
 	
 
