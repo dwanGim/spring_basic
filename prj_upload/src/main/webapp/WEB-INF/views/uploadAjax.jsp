@@ -14,6 +14,28 @@
 
 	<h1>upload with ajax</h1>
 	
+		<div class="fileinput fileinput-new position-relative" data-provides="fileinput">
+			<div class="fileinput-new thumbnail img-circle">
+				<img src="/resources/images/main_picture.jpg">
+			</div>
+			<div class="fileinput-preview fileinput-exists thumbnail img-circle">
+			</div>
+			<div class="btn-photo-add">
+				<span class="btn btn-round btn-icon btn-file btn-main btn-sm">
+					<span class="fileinput-new">
+						<i class="nc-icon nc-simple-add"></i>
+					</span>
+					<span class="fileinput-exists">
+						<i class="nc-icon nc-settings"></i>
+					</span>
+						<input type="file" name="..." onchange="fnChangeFile(this)" data-src=""></span>
+						<a class="btn btn-danger btn-round fileinput-exists d-none" href="#pablo" data-dismiss="fileinput">
+							<i class="fa fa-times"></i>
+						Remove</a>
+				</div>
+		</div>
+	
+	
 	<div class="uploadDiv">
 		<input type="file" name="uploadFile" multiple>
 	</div>
